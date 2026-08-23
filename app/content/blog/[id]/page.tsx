@@ -71,7 +71,6 @@ export default function BlogPostPage() {
 
   const postImage = post.coverImageUrl || post.imageUrl || `https://picsum.photos/seed/${post.id}/1200/675`;
   const postContent = post.bodyRichText || post.contentMarkdown || post.description || post.content || '';
-  const isHtml = /<[a-z][\s\S]*>/i.test(postContent);
 
   return (
     <div className="container mx-auto px-4 sm:px-6 max-w-4xl pt-32 pb-24">
@@ -190,7 +189,7 @@ export default function BlogPostPage() {
       </div>
 
       {/* Content Renderer with full LaTeX & Markdown / HTML support */}
-      <LatexRenderer content={postContent} isHtml={isHtml} />
+      <LatexRenderer content={postContent} />
 
       {/* Bottom Back Button */}
       <div className="mt-16 pt-8 border-t border-white/10 flex items-center justify-between">
