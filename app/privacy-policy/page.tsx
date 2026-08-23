@@ -3,7 +3,7 @@
 import { PageHeader } from '@/components/page-header';
 import { useEffect, useState } from 'react';
 import { getPrivacyPolicy, subscribeStaticPage } from '@/lib/db';
-import Markdown from 'react-markdown';
+import { LatexRenderer } from '@/components/latex-renderer';
 
 export default function PrivacyPolicyPage() {
   const [content, setContent] = useState<any>(null);
@@ -47,9 +47,7 @@ export default function PrivacyPolicyPage() {
         {loading ? (
           <div className="text-center py-8 text-primary-light/60 dark:text-primary/60">Loading privacy policy...</div>
         ) : content?.contentMarkdown ? (
-          <div className="markdown-body leading-relaxed">
-            <Markdown>{content.contentMarkdown}</Markdown>
-          </div>
+          <LatexRenderer content={content.contentMarkdown} />
         ) : (
           <>
             <h2>1. Overview &amp; Commitment</h2>

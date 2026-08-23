@@ -121,6 +121,24 @@
   .marquee-group:hover .animate-marquee {
     animation-play-state: paused;
   }
+
+  /* KaTeX Math Rendering Enhancements */
+  .katex-display {
+    @apply overflow-x-auto overflow-y-hidden py-3 my-4 text-center max-w-full;
+  }
+  .katex {
+    font-size: 1.1em;
+    text-rendering: auto;
+  }
+  .katex-html {
+    @apply text-inherit;
+  }
+  .dark .katex {
+    @apply text-slate-100;
+  }
+  .katex-display-wrapper {
+    @apply w-full overflow-x-auto py-2;
+  }
 }
 
 @media print {

@@ -5,7 +5,7 @@ import { useParams, useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import { getBlogById, BlogPost } from '@/lib/db';
 import { ChevronLeft, Calendar, Clock, User, Tag, Share2, Check, ArrowLeft, BookOpen } from 'lucide-react';
-import Markdown from 'react-markdown';
+import { LatexRenderer } from '@/components/latex-renderer';
 
 export default function BlogPostPage() {
   const params = useParams();
@@ -189,17 +189,8 @@ export default function BlogPostPage() {
         />
       </div>
 
-      {/* Content Renderer (HTML from Tiptap / CMS or Markdown) */}
-      {isHtml ? (
-        <div 
-          className="markdown-body prose prose-lg dark:prose-invert max-w-none prose-a:text-info-light leading-relaxed break-words"
-          dangerouslySetInnerHTML={{ __html: postContent }}
-        />
-      ) : (
-        <div className="markdown-body prose prose-lg dark:prose-invert max-w-none prose-a:text-info-light leading-relaxed break-words">
-          <Markdown>{postContent}</Markdown>
-        </div>
-      )}
+      {/* Content Renderer with full LaTeX & Markdown / HTML support */}
+      <LatexRenderer content={postContent} isHtml={isHtml} />
 
       {/* Bottom Back Button */}
       <div className="mt-16 pt-8 border-t border-white/10 flex items-center justify-between">

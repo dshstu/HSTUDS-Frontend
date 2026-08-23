@@ -3,7 +3,7 @@
 import { PageHeader } from '@/components/page-header';
 import { useEffect, useState } from 'react';
 import { getHistory, subscribeStaticPage } from '@/lib/db';
-import Markdown from 'react-markdown';
+import { LatexRenderer } from '@/components/latex-renderer';
 
 export default function HistoryPage() {
   const [content, setContent] = useState<any>(null);
@@ -45,9 +45,7 @@ export default function HistoryPage() {
           {loading ? (
             <div className="text-center">Loading...</div>
           ) : content ? (
-            <div className="markdown-body">
-              <Markdown>{content.contentMarkdown || content.description || ''}</Markdown>
-            </div>
+            <LatexRenderer content={content.contentMarkdown || content.description || ''} />
           ) : (
             <>
               <h2>The Beginning (1995)</h2>

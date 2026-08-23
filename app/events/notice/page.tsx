@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 import { Bell, Calendar } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { getNotices } from '@/lib/db';
-import Markdown from 'react-markdown';
+import { LatexRenderer } from '@/components/latex-renderer';
 
 export default function NoticePage() {
   const [notices, setNotices] = useState<any[]>([]);
@@ -64,9 +64,7 @@ export default function NoticePage() {
                   <Calendar className="w-3.5 h-3.5" /> {dateStr}
                 </div>
                 <h3 className="text-xl font-bold mb-3">{notice.title}</h3>
-                <div className="markdown-body prose prose-sm dark:prose-invert max-w-none text-primary-light/70 dark:text-primary/70 leading-relaxed">
-                  <Markdown>{noticeText}</Markdown>
-                </div>
+                <LatexRenderer content={noticeText} className="prose-sm text-primary-light/70 dark:text-primary/70" />
               </div>
             </motion.div>
           );

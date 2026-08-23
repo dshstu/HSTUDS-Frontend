@@ -3,7 +3,7 @@
 import { PageHeader } from '@/components/page-header';
 import { useEffect, useState } from 'react';
 import { getConstitution, subscribeStaticPage } from '@/lib/db';
-import Markdown from 'react-markdown';
+import { LatexRenderer } from '@/components/latex-renderer';
 
 export default function ConstitutionPage() {
   const [content, setContent] = useState<any>(null);
@@ -44,9 +44,7 @@ export default function ConstitutionPage() {
         {loading ? (
           <div className="text-center">Loading...</div>
         ) : content ? (
-          <div className="markdown-body">
-            <Markdown>{content.contentMarkdown || content.description || ''}</Markdown>
-          </div>
+          <LatexRenderer content={content.contentMarkdown || content.description || ''} />
         ) : (
           <>
             <h2>Article I: Name and Purpose</h2>

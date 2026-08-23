@@ -4,8 +4,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { ChevronDown } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { getFaqs } from '@/lib/db';
-
-import Markdown from 'react-markdown';
+import { LatexRenderer } from '@/components/latex-renderer';
 
 function FaqItem({ item, isOpen, onClick }: { item: any, isOpen: boolean, onClick: () => void }) {
   const content = item.description || item.answer || '';
@@ -32,11 +31,7 @@ function FaqItem({ item, isOpen, onClick }: { item: any, isOpen: boolean, onClic
             transition={{ duration: 0.3 }}
           >
             <div className="px-6 md:px-8 pb-8 text-primary-light/80 dark:text-primary/80 leading-relaxed border-t border-black/5 dark:border-white/5 pt-6 text-sm">
-              {isHtml ? (
-                <div dangerouslySetInnerHTML={{ __html: content }} />
-              ) : (
-                <Markdown>{content}</Markdown>
-              )}
+              <LatexRenderer content={content} isHtml={isHtml} className="prose-sm" />
             </div>
           </motion.div>
         )}

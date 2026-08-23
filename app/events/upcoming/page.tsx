@@ -5,7 +5,7 @@ import { motion } from 'motion/react';
 import { MapPin, Calendar, Clock, Ticket, CalendarPlus, Sparkles } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { getUpcomingEvents, EventItem } from '@/lib/db';
-import Markdown from 'react-markdown';
+import { LatexRenderer } from '@/components/latex-renderer';
 
 export default function UpcomingPage() {
   const [events, setEvents] = useState<EventItem[]>([]);
@@ -117,9 +117,9 @@ export default function UpcomingPage() {
                     {title}
                   </h3>
                   
-                  {/* Markdown Formatted Description */}
-                  <div className="markdown-body prose prose-sm dark:prose-invert max-w-none text-primary-light/80 dark:text-primary/80 leading-relaxed mb-6 line-clamp-4">
-                    <Markdown>{desc}</Markdown>
+                  {/* Formatted Description with LaTeX & Markdown */}
+                  <div className="mb-6 line-clamp-4 text-primary-light/80 dark:text-primary/80">
+                    <LatexRenderer content={desc} className="prose-sm" />
                   </div>
                 </div>
                 

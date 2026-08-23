@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { Suspense } from 'react';
 import Script from 'next/script';
 import { Montserrat, Inter, Space_Grotesk } from 'next/font/google';
+import 'katex/dist/katex.min.css';
 import './globals.css';
 import { Navbar } from '@/components/navbar';
 import { Footer } from '@/components/footer';
