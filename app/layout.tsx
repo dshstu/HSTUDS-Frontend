@@ -44,7 +44,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://hsturs.org';
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'Debating Society of HSTU | Analyze, Strategize, Improvise',
+    default: 'Debating Society of HSTU',
     template: '%s | Debating Society of HSTU',
   },
   description:
@@ -87,7 +87,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: siteUrl,
-    title: 'Debating Society of HSTU | Analyze, Strategize, Improvise',
+    title: 'Debating Society of HSTU',
     description:
       'Official platform of Debating Society of HSTU. Empowering student speakers and debaters, organizing tournaments, and workshops.',
     siteName: 'Debating Society of HSTU',

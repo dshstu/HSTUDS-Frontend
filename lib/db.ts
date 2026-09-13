@@ -946,7 +946,7 @@ export const DEFAULT_FOOTER_INFO: FooterInfo = {
   phone: "+880 1730-826594",
   youtubeUrl: "https://www.youtube.com/@hsturesearchsociety3168",
   siteName: "Debating Society of HSTU",
-  description: "Analyze, Strategize, Improvise. Empowering the next generation of researchers through community, innovation, and action.",
+  description: "Fostering Talent and cultivating logical thinking within youths.",
   newsletterUrl: "https://forms.gle/3NG63JDYm9Qmgg379",
   newsletterLabel: "Join our Newsletter",
 };
