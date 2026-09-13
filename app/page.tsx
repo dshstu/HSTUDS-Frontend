@@ -41,50 +41,63 @@ function AnimatedCounter({ endValue, duration = 2000, suffix = "" }: { endValue:
 
 function TypewriterHeading() {
   const [text, setText] = React.useState('');
-  const fullText = "ANALYZE\nSTRATEGIZE\nIMPROVISE";
+  const fullText = "HSTUDS";
 
   React.useEffect(() => {
-    let i = 0;
-    const timeout = setTimeout(() => {
-      const timer = setInterval(() => {
-        i++;
-        setText(fullText.slice(0, i));
-        if (i >= fullText.length) clearInterval(timer);
-      }, 70);
-    }, 150);
-    return () => clearTimeout(timeout);
+    let index = 0;
+    let isDeleting = false;
+    let timeoutId: NodeJS.Timeout;
+
+    function step() {
+      if (!isDeleting) {
+        index++;
+        setText(fullText.slice(0, index));
+        if (index === fullText.length) {
+          timeoutId = setTimeout(() => {
+            isDeleting = true;
+            step();
+          }, 3500);
+          return;
+        }
+        timeoutId = setTimeout(step, 140);
+      } else {
+        index--;
+        setText(fullText.slice(0, index));
+        if (index === 0) {
+          isDeleting = false;
+          timeoutId = setTimeout(step, 400);
+          return;
+        }
+        timeoutId = setTimeout(step, 80);
+      }
+    }
+
+    timeoutId = setTimeout(step, 200);
+
+    return () => clearTimeout(timeoutId);
   }, []);
 
-  const renderLines = (content: string, isCursor = false) => {
-    const lines = content.split('\n');
-    return (
-      <div className="flex flex-col space-y-1">
-        {lines.map((line, idx) => (
-          <div key={idx} className="leading-[1.06] tracking-tight">
-            {idx === 1 ? (
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-info-light via-blue-500 to-indigo-500">
-                {line}
-              </span>
-            ) : (
-              <span>{line}</span>
-            )}
-            {isCursor && idx === lines.length - 1 && (
-              <span className="animate-pulse border-r-4 border-info-light ml-1 sm:ml-2 inline-block h-[0.75em] align-middle" />
-            )}
-          </div>
-        ))}
-      </div>
-    );
-  };
-
   return (
-    <div className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-[76px] font-extrabold tracking-tight pt-2 pb-2 relative w-full text-left">
-      <div className="opacity-0 pointer-events-none select-none text-left" aria-hidden="true">
-        {renderLines(fullText)}
-      </div>
-      <div className="absolute top-0 left-0 w-full h-full pt-2 text-left">
-        {renderLines(text, true)}
-      </div>
+    <div 
+      className="relative inline-flex items-center justify-center text-center font-black tracking-[0.14em] sm:tracking-[0.22em] text-5xl xs:text-6xl sm:text-7xl md:text-8xl lg:text-[96px] select-none py-1"
+      aria-label="HSTUDS"
+    >
+      {/* Invisible placeholder to prevent layout shift */}
+      <span className="opacity-0 pointer-events-none select-none text-transparent" aria-hidden="true">
+        {fullText}
+        <span className="inline-block w-2 sm:w-4" />
+      </span>
+
+      {/* Typewriter text with gradient and blinking cursor */}
+      <span className="absolute inset-0 flex items-center justify-center">
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-blue-400 to-indigo-300 drop-shadow-[0_4px_24px_rgba(56,189,248,0.45)]">
+          {text}
+        </span>
+        <span 
+          aria-hidden="true"
+          className="inline-block w-[3px] sm:w-[5px] md:w-[6px] h-[0.72em] bg-sky-400 ml-1 sm:ml-2 align-middle rounded-full animate-pulse shadow-[0_0_12px_rgba(56,189,248,0.9)]" 
+        />
+      </span>
     </div>
   );
 }
@@ -105,56 +118,61 @@ export default function Home() {
   return (
     <div className="flex flex-col gap-24 pb-12">
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] flex items-center pt-8">
-        <div className="container mx-auto px-6 max-w-7xl">
-          <div className="grid lg:grid-cols-2 gap-8 items-center">
-            <div className="flex flex-col gap-5 max-w-2xl relative z-10">
+      <section className="container mx-auto px-4 sm:px-6 max-w-7xl pt-2">
+        <div className="relative min-h-[580px] sm:min-h-[640px] md:min-h-[680px] rounded-[36px] sm:rounded-[44px] overflow-hidden flex flex-col justify-between items-center text-center shadow-2xl border border-black/10 dark:border-white/15">
+          {/* Background image across entire hero */}
+          <div className="absolute inset-0 z-0">
+            <Image 
+              src="https://archive.org/download/hero_20260913/hero.png"
+              alt="Debating Society of HSTU Hero"
+              fill
+              priority
+              className="object-cover object-center scale-100 hover:scale-105 transition-transform duration-1000"
+              referrerPolicy="no-referrer"
+              sizes="(max-width: 1280px) 100vw, 1280px"
+            />
+            {/* Multi-layer gradient overlays for high legibility */}
+            <div className="absolute inset-0 bg-gradient-to-b from-slate-950/90 via-slate-950/60 to-slate-950/90" />
+            <div className="absolute inset-0 bg-slate-950/20" />
+          </div>
+
+          {/* Top Middle: Typewriter effect HSTUDS */}
+          <div className="relative z-10 w-full pt-10 sm:pt-14 md:pt-16 px-4 flex flex-col items-center justify-center text-center">
+            <div className="inline-flex flex-col items-center">
               <TypewriterHeading />
-              
-              <motion.p 
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                className="text-lg md:text-xl text-primary-light/70 dark:text-primary/70 max-w-lg leading-relaxed"
-              >
-                Empowering the next generation of researchers, innovators, and leaders through active research, collaborative community, and extensive resources.
-              </motion.p>
-              
-              <motion.div 
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                className="flex flex-col sm:flex-row gap-4 pt-4"
-              >
-                <Link href="/content/gallery" className="btn-primary group">
-                  Explore Gallery
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                </Link>
-                <Link href="/contact" className="btn-secondary">
-                  Contact Us
-                </Link>
-              </motion.div>
+              <span className="text-xs sm:text-sm uppercase tracking-[0.28em] font-semibold text-sky-200/90 drop-shadow mt-1">
+                Debating Society of HSTU
+              </span>
             </div>
+          </div>
+
+          {/* Center/Bottom: Texts and buttons displayed over the hero image */}
+          <div className="relative z-10 w-full max-w-2xl px-6 sm:px-8 pb-12 sm:pb-16 md:pb-20 flex flex-col items-center text-center gap-6">
+            <motion.p 
+              initial={{ opacity: 0, y: 25 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+              className="text-base sm:text-lg md:text-xl text-slate-200 leading-relaxed font-normal drop-shadow max-w-xl"
+            >
+              Empowering the next generation of debaters, critical thinkers, and leaders through parliamentary debate, collaborative discourse, and extensive resources.
+            </motion.p>
             
             <motion.div 
-              initial={{ opacity: 0, scale: 0.9, rotateX: 10, rotateY: -10 }}
-              animate={{ opacity: 1, scale: 1, rotateX: 0, rotateY: 0 }}
-              transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="relative h-[500px] lg:h-[700px] w-full"
-              style={{ perspective: 1000 }}
+              initial={{ opacity: 0, y: 25 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
+              className="flex flex-wrap items-center justify-center gap-4 pt-1"
             >
-              <div className="absolute inset-0 bg-gradient-to-tr from-info-light/20 to-transparent rounded-[40px] transform rotate-3" />
-              <div className="absolute inset-0 glass-card overflow-hidden">
-                <Image 
-                  src="/heroimg1.png"
-                  alt="HSTU Research Society activities"
-                  fill
-                  priority
-                  className="object-cover hover:scale-105 transition-transform duration-700"
-                  referrerPolicy="no-referrer"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              </div>
+              <Link href="/content/gallery" className="btn-primary group shadow-lg shadow-blue-500/25">
+                Explore Gallery
+                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <Link 
+                href="/contact" 
+                className="px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur-md shadow-sm hover:scale-[1.02]"
+              >
+                Contact Us
+              </Link>
             </motion.div>
           </div>
         </div>
@@ -165,10 +183,10 @@ export default function Home() {
         <div className="glass rounded-[36px] p-8 md:p-12 border-white/40 shadow-xl">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-black/5 dark:divide-white/10">
             {[
-              { label: 'Active Researchers', endValue: 250, suffix: '+' , icon: Users },
-              { label: 'Years Established', endValue: 11, suffix: '', icon: Calendar },
-              { label: 'Alumni Network', endValue: 600, suffix: '+', icon: Award },
-              { label: 'Publications & Resources', endValue: 350, suffix: '+', icon: BookOpen },
+              { label: 'Active Members', endValue: 250, suffix: '+' , icon: Users },
+              { label: 'Years Established', endValue: 30, suffix: '', icon: Calendar },
+              { label: 'Alumni Network', endValue: 3000, suffix: '+', icon: Award },
+              { label: 'Practice Debates', endValue: 10000, suffix: '+', icon: BookOpen },
             ].map((stat, i) => (
               <motion.div 
                 key={i}
@@ -203,8 +221,8 @@ export default function Home() {
             className="relative h-[400px] lg:h-[600px] w-full rounded-[36px] overflow-hidden group shadow-2xl"
           >
             <Image
-              src="/card.png"
-              alt="About HSTU Research Society"
+              src="https://ia601508.us.archive.org/4/items/hero_20260913/facebook_1789317118244_7504939946319898352.jpg"
+              alt="About Debating Society of HSTU"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -213,7 +231,7 @@ export default function Home() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
               <div className="glass px-6 py-4 rounded-2xl border-white/20 backdrop-blur-md hover:bg-white/70 transition-colors">
-                <p className="text-primary-light dark:text-primary font-medium">&quot;Pioneering Research &amp; Innovation&quot;</p>
+                <p className="text-primary-light dark:text-primary font-medium">&quot;Logic, Eloquence &amp; Leadership&quot;</p>
               </div>
             </div>
           </motion.div>
@@ -324,7 +342,7 @@ export default function Home() {
                         )}
                         <div className="min-w-0 flex-1">
                           <p className="text-xs font-bold text-slate-900 dark:text-slate-100 truncate">
-                            {item.authorName || item.author || "HSTU Research Society"}
+                            {item.authorName || item.author || "Debating Society of HSTU"}
                           </p>
                           {item.authorRole && (
                             <p className="text-[10px] text-slate-500 dark:text-slate-400 truncate">{item.authorRole}</p>

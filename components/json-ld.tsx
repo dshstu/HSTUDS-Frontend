@@ -8,12 +8,12 @@ export function JsonLd() {
   const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'EducationalOrganization',
-    name: 'HSTU Research Society',
-    alternateName: ['HSTURS', 'Hajee Mohammad Danesh Science and Technology University Research Society'],
+    name: 'Debating Society of HSTU',
+    alternateName: ['HSTU Debating Society', 'Hajee Mohammad Danesh Science and Technology University Debating Society'],
     url: siteUrl,
     logo: `${siteUrl}/logo.png`,
     image: `${siteUrl}/logo.png`,
-    description: 'Hajee Mohammad Danesh Science and Technology University Research Society (HSTURS) is a student-driven academic and scientific research community empowering students and scholars.',
+    description: 'Debating Society of HSTU is a premier student-driven debating and public speaking community empowering students and scholars.',
     email: DEFAULT_FOOTER_INFO.email,
     telephone: DEFAULT_FOOTER_INFO.phone,
     address: {
@@ -40,7 +40,7 @@ export function JsonLd() {
   const webSiteSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'HSTU Research Society',
+    name: 'Debating Society of HSTU',
     url: siteUrl,
     potentialAction: {
       '@type': 'SearchAction',

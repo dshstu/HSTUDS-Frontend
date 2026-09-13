@@ -757,7 +757,7 @@ export async function getMembership(queryStr: string): Promise<MembershipRecord 
         const fullName = raw.fullName || raw.name || raw.memberName || 'Society Member';
         const photoUrl = raw.photoUrl || raw.photo || raw.imageUrl || raw.avatar || `https://picsum.photos/seed/${encodeURIComponent(cleanQuery)}/400/400`;
         const batch = raw.batch !== undefined && raw.batch !== null ? raw.batch : (raw.batchNo || '');
-        const department = raw.department || raw.dept || 'HSTU Research Society';
+        const department = raw.department || raw.dept || 'Debating Society of HSTU';
         const facebookUrl = raw.facebookUrl || raw.facebook || '';
         const linkedinUrl = raw.linkedinUrl || raw.linkedin || '';
         const email = raw.emailAddress || raw.email || '';
@@ -945,7 +945,7 @@ export const DEFAULT_FOOTER_INFO: FooterInfo = {
   linkedinUrl: "https://linkedin.com/company/hstu-research-society",
   phone: "+880 1730-826594",
   youtubeUrl: "https://www.youtube.com/@hsturesearchsociety3168",
-  siteName: "HSTU Research Society",
+  siteName: "Debating Society of HSTU",
   description: "Analyze, Strategize, Improvise. Empowering the next generation of researchers through community, innovation, and action.",
   newsletterUrl: "https://forms.gle/3NG63JDYm9Qmgg379",
   newsletterLabel: "Join our Newsletter",

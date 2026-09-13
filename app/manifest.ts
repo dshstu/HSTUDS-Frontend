@@ -2,9 +2,9 @@ import type { MetadataRoute } from 'next';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'HSTU Research Society',
-    short_name: 'HSTU RS',
-    description: 'Hajee Mohammad Danesh Science and Technology University Research Society',
+    name: 'Debating Society of HSTU',
+    short_name: 'Debating Society',
+    description: 'Official platform of Debating Society of HSTU',
     start_url: '/',
     display: 'standalone',
     background_color: '#ffffff',

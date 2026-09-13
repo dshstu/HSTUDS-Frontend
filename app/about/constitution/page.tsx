@@ -49,7 +49,7 @@ export default function ConstitutionPage() {
           <>
             <h2>Article I: Name and Purpose</h2>
             <p>
-              <strong>Section 1.</strong> The name of this organization shall be HSTU Research Society.
+              <strong>Section 1.</strong> The name of this organization shall be Debating Society of HSTU.
             </p>
             <p>
               <strong>Section 2.</strong> The purpose of this organization is to foster an environment where ideas flourish, to provide resources and community for aspiring leaders, and to bridge the gap between academic learning and practical application.

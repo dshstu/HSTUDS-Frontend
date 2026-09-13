@@ -106,7 +106,7 @@ export function Navbar() {
           >
             <Image 
               src="/logo.png" 
-              alt="HSTU Research Society Logo" 
+              alt="Debating Society of HSTU Logo" 
               width={48}
               height={48}
               priority
@@ -114,7 +114,7 @@ export function Navbar() {
               referrerPolicy="no-referrer"
             />
           </motion.div>
-          <span className="font-bold text-xl tracking-tight hidden sm:block">HSTU Research Society</span>
+          <span className="font-bold text-xl tracking-tight hidden sm:block">Debating Society of HSTU</span>
         </Link>
 
         {/* Desktop Nav */}

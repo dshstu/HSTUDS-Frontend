@@ -238,7 +238,7 @@ export function PartnersSection() {
         {/* Bottom invitation footnote */}
         <div className="text-center mt-10">
           <p className="text-xs text-primary-light/50 dark:text-primary/50">
-            Interested in partnering with HSTU Research Society?{' '}
+            Interested in partnering with Debating Society of HSTU?{' '}
             <a
               href="/contact"
               className="text-info-light font-semibold hover:underline inline-flex items-center gap-1"

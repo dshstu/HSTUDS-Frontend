@@ -40,7 +40,7 @@ export default function PrivacyPolicyPage() {
     <div className="container mx-auto px-6 max-w-4xl pb-24">
       <PageHeader 
         title="Privacy Policy" 
-        description="Learn how HSTU Research Society collects, protects, and respects your personal information."
+        description="Learn how Debating Society of HSTU collects, protects, and respects your personal information."
       />
       
       <div className="glass rounded-[36px] p-8 md:p-12 prose dark:prose-invert max-w-none prose-headings:font-bold prose-a:text-info-light">
@@ -52,7 +52,7 @@ export default function PrivacyPolicyPage() {
           <>
             <h2>1. Overview &amp; Commitment</h2>
             <p>
-              The <strong>HSTU Research Society (HSTU RS)</strong> is committed to safeguarding the privacy and personal data of our members, 
+              The <strong>Debating Society of HSTU</strong> is committed to safeguarding the privacy and personal data of our members, 
               event attendees, newsletter subscribers, and website visitors. This Privacy Policy details how we gather, utilize, and protect your information.
             </p>
 
@@ -102,7 +102,7 @@ export default function PrivacyPolicyPage() {
 
             <hr />
             <p className="text-sm text-primary-light/60 dark:text-primary/60 text-center mt-8">
-              Effective Date: January 2025 • HSTU Research Society
+              Effective Date: January 2025 • Debating Society of HSTU
             </p>
           </>
         )}

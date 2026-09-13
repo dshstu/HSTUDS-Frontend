@@ -113,7 +113,7 @@ export function PWAProvider() {
       <AnimatePresence>
         {showInstallBanner && !isInstalled && deferredPrompt && (
           <motion.aside
-            aria-label="Install HSTU Research Society Web App"
+            aria-label="Install Debating Society of HSTU Web App"
             initial={{ opacity: 0, y: 40, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 30, scale: 0.96 }}
@@ -135,7 +135,7 @@ export function PWAProvider() {
               <div className="flex-1 min-w-0">
                 <div className="flex items-center justify-between gap-2">
                   <h4 className="font-bold text-sm text-slate-900 dark:text-white tracking-tight flex items-center gap-1.5">
-                    Install HSTU RS App
+                    Install HSTU DS App
                     <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20">
                       PWA
                     </span>

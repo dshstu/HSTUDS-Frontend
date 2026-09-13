@@ -44,29 +44,29 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://hsturs.org';
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'HSTU Research Society | Analyze, Strategize, Improvise',
-    template: '%s | HSTU Research Society',
+    default: 'Debating Society of HSTU | Analyze, Strategize, Improvise',
+    template: '%s | Debating Society of HSTU',
   },
   description:
-    'Official platform of Hajee Mohammad Danesh Science and Technology University Research Society (HSTURS). Empowering future researchers through scientific innovation, academic publications, workshops, and global collaboration.',
+    'Official platform of Debating Society of HSTU. Empowering future debaters, researchers, and leaders through discourse, parliamentary debate, workshops, and global collaboration.',
   keywords: [
-    'HSTU Research Society',
-    'HSTURS',
+    'Debating Society of HSTU',
+    'HSTU Debating Society',
     'HSTU',
     'Hajee Mohammad Danesh Science and Technology University',
-    'Research Society Bangladesh',
-    'Academic Research',
-    'Scientific Publications',
+    'Debate Bangladesh',
+    'Parliamentary Debate',
+    'Public Speaking',
     'Undergraduate Research',
-    'University Research Society',
-    'Dinajpur Research',
+    'University Debate Society',
+    'Dinajpur Debate',
     'ELSEPA',
-    'STEM Research Bangladesh',
+    'STEM Debate Bangladesh',
   ],
-  authors: [{ name: 'HSTU Research Society', url: siteUrl }],
-  creator: 'HSTU Research Society',
-  publisher: 'HSTU Research Society',
-  applicationName: 'HSTU Research Society',
+  authors: [{ name: 'Debating Society of HSTU', url: siteUrl }],
+  creator: 'Debating Society of HSTU',
+  publisher: 'Debating Society of HSTU',
+  applicationName: 'Debating Society of HSTU',
   manifest: '/manifest.webmanifest',
   alternates: {
     canonical: '/',
@@ -87,24 +87,24 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: siteUrl,
-    title: 'HSTU Research Society | Analyze, Strategize, Improvise',
+    title: 'Debating Society of HSTU | Analyze, Strategize, Improvise',
     description:
-      'Official platform of Hajee Mohammad Danesh Science and Technology University Research Society. Empowering student researchers, publishing scientific journals, and organizing workshops.',
-    siteName: 'HSTU Research Society',
+      'Official platform of Debating Society of HSTU. Empowering student speakers and debaters, organizing tournaments, and workshops.',
+    siteName: 'Debating Society of HSTU',
     images: [
       {
         url: '/logo.png',
         width: 512,
         height: 512,
-        alt: 'HSTU Research Society Official Logo',
+        alt: 'Debating Society of HSTU Official Logo',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'HSTU Research Society',
+    title: 'Debating Society of HSTU',
     description:
-      'Empowering the next generation of researchers at Hajee Mohammad Danesh Science and Technology University.',
+      'Empowering the next generation of debaters and leaders at Hajee Mohammad Danesh Science and Technology University.',
     site: '@hsturesearch',
     creator: '@hsturesearch',
     images: ['/logo.png'],
@@ -112,15 +112,15 @@ export const metadata: Metadata = {
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
-    title: 'HSTU RS',
+    title: 'HSTU DS',
   },
   icons: {
     icon: [
-      { url: '/logo.png?v=3', sizes: '192x192', type: 'image/png' },
-      { url: '/logo.png?v=3', sizes: '512x512', type: 'image/png' },
+      { url: '/logo.png?v=4', sizes: '192x192', type: 'image/png' },
+      { url: '/logo.png?v=4', sizes: '512x512', type: 'image/png' },
     ],
     apple: [
-      { url: '/logo.png?v=3', sizes: '192x192', type: 'image/png' },
+      { url: '/logo.png?v=4', sizes: '192x192', type: 'image/png' },
     ],
   },
   formatDetection: {
@@ -161,8 +161,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           }}
         />
         {/* End Google Tag Manager */}
-        <link rel="apple-touch-icon" href="/logo.png?v=3" />
-        <link rel="icon" href="/logo.png?v=3" />
+        <link rel="apple-touch-icon" href="/logo.png?v=4" />
+        <link rel="icon" href="/logo.png?v=4" />
         <meta name="mobile-web-app-capable" content="yes" />
         <JsonLd />
       </head>

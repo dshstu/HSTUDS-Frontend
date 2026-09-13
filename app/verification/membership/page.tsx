@@ -52,7 +52,7 @@ function MembershipVerificationInner() {
     <div className="container mx-auto px-4 sm:px-6 max-w-4xl pb-24 min-h-[75vh] flex flex-col justify-start pt-4">
       <PageHeader 
         title="Membership Verification" 
-        description="Verify active membership records of HSTU Research Society with authentic digital identity credentials." 
+        description="Verify active membership records of Debating Society of HSTU with authentic digital identity credentials." 
       />
 
       {/* SEARCH FORM */}

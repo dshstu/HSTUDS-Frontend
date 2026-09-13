@@ -1,4 +1,4 @@
-// Service Worker for HSTU Research Society PWA
+// Service Worker for Debating Society of HSTU PWA
 const CACHE_NAME = 'hstu-rs-cache-v3';
 
 const STATIC_ASSETS = [

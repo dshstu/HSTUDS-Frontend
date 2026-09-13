@@ -40,7 +40,7 @@ export default function TermsOfServicePage() {
     <div className="container mx-auto px-6 max-w-4xl pb-24">
       <PageHeader 
         title="Terms of Service" 
-        description="Please review the terms and conditions governing your participation and use of HSTU Research Society resources."
+        description="Please review the terms and conditions governing your participation and use of Debating Society of HSTU resources."
       />
       
       <div className="glass rounded-[36px] p-8 md:p-12 prose dark:prose-invert max-w-none prose-headings:font-bold prose-a:text-info-light">
@@ -53,7 +53,7 @@ export default function TermsOfServicePage() {
             <h2>1. Acceptance of Terms</h2>
             <p>
               By accessing the official website, participating in events, or utilizing resources provided by the 
-              <strong> HSTU Research Society (HSTU RS)</strong>, you agree to adhere to and be bound by these Terms of Service. 
+              <strong> Debating Society of HSTU</strong>, you agree to adhere to and be bound by these Terms of Service. 
               If you do not agree with any portion of these terms, you should refrain from using our online platforms and services.
             </p>
 
@@ -71,7 +71,7 @@ export default function TermsOfServicePage() {
             <h2>3. Intellectual Property &amp; Publications</h2>
             <p>
               All original content, magazines, event media, research articles, logos, and digital publications displayed on this platform are 
-              the property of the HSTU Research Society or their respective authors. Content may be downloaded or referenced for personal, academic, 
+              the property of the Debating Society of HSTU or their respective authors. Content may be downloaded or referenced for personal, academic, 
               and non-commercial use with appropriate citation and credit.
             </p>
 
@@ -84,7 +84,7 @@ export default function TermsOfServicePage() {
 
             <h2>5. Disclaimer of Liability</h2>
             <p>
-              The HSTU Research Society provides educational materials, event announcements, and resources on an &ldquo;as is&rdquo; basis. 
+              The Debating Society of HSTU provides educational materials, event announcements, and resources on an &ldquo;as is&rdquo; basis. 
               While we strive for accuracy, the society makes no warranties regarding the complete precision or applicability of materials for specific commercial applications.
             </p>
 
@@ -100,7 +100,7 @@ export default function TermsOfServicePage() {
 
             <hr />
             <p className="text-sm text-primary-light/60 dark:text-primary/60 text-center mt-8">
-              Effective Date: January 2025 • HSTU Research Society
+              Effective Date: January 2025 • Debating Society of HSTU
             </p>
           </>
         )}

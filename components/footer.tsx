@@ -54,7 +54,7 @@ export function Footer() {
     };
   }, []);
 
-  const siteName = footerInfo.siteName || DEFAULT_FOOTER_INFO.siteName || 'HSTU Research Society';
+  const siteName = footerInfo.siteName || DEFAULT_FOOTER_INFO.siteName || 'Debating Society of HSTU';
   const description =
     footerInfo.description ||
     footerInfo.tagline ||

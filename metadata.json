@@ -1,6 +1,6 @@
 {
-  "name": "HSTU Research Society",
-  "description": "Hajee Mohammad Danesh Science and Technology University Research Society is the premier research institution of the country",
+  "name": "Debating Society of HSTU",
+  "description": "Debating Society of HSTU is the premier debating institution empowering students through discourse, parliamentary debate, critical thinking, and leadership.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
